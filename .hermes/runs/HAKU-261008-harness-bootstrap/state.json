@@ -13,8 +13,8 @@
   },
   "next_action": "No action; bootstrap complete",
   "last_verified": "2026-10-08",
-  "local_commit": "d509dd8",
-  "candidate_commit": "d509dd8",
+  "local_commit": "current HEAD after final publication reconciliation",
+  "candidate_commit": "content commit d509dd8",
   "remote_parity": true,
   "remote_ref": "refs/heads/main",
   "runtime_active": false

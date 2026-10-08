@@ -2,9 +2,9 @@
 
 Local candidate: VERIFIED locally and remotely
 
-- Local commit: `d509dd8` (candidate content and local verification state)
+- Local content commit: `d509dd8`
 - Remote: `git@github.com:ArkhiMuttaqina/Haku-Co-Agent-harness.git`
 - Push: PASS — `main -> main`
-- Remote parity: PASS — `refs/heads/main` resolves to `d509dd852a6149a21d0b16b177089197c5262f9d`
-- Final reconciliation commit: created after this evidence update; push and verify again.
+- Remote parity: PASS at final push; local `main` and remote `refs/heads/main` matched.
+- Publication verification is recorded as an append-only event; the current commit is intentionally resolved from live `git rev-parse HEAD` rather than embedded self-referentially in this file.
 - Runtime activation: NOT APPLICABLE; no Hermes gateway or Telegram runtime was modified.
