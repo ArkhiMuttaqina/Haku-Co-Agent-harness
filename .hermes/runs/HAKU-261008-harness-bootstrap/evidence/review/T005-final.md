@@ -1,15 +1,10 @@
 # T005 — final review
 
-Local candidate: VERIFIED locally, publication BLOCKED
+Local candidate: VERIFIED locally and remotely
 
-- Local commit: `b355a31` (candidate content and local verification state)
-- Final reconciliation commit: created after this evidence update; verify with `git log -1`
-- Branch: `main`
-- Worktree: clean after commit
-- Remote: `origin` configured for `ArkhiMuttaqina/Haku-Co-Agent-harness`
-- Local verification: `git show --check` passed
-- Remote push attempt: BLOCKED because this shell has no GitHub credentials (`could not read Username`)
-- Remote parity: NOT VERIFIED; `git ls-remote origin HEAD refs/heads/main` returned no refs.
+- Local commit: `d509dd8` (candidate content and local verification state)
+- Remote: `git@github.com:ArkhiMuttaqina/Haku-Co-Agent-harness.git`
+- Push: PASS — `main -> main`
+- Remote parity: PASS — `refs/heads/main` resolves to `d509dd852a6149a21d0b16b177089197c5262f9d`
+- Final reconciliation commit: created after this evidence update; push and verify again.
 - Runtime activation: NOT APPLICABLE; no Hermes gateway or Telegram runtime was modified.
-
-Next unblock: authenticate GitHub in an independent shell, run `git push -u origin main`, then verify remote `refs/heads/main` equals the local commit.

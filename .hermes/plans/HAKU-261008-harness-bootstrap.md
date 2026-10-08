@@ -56,5 +56,5 @@ User intent -> HAKU orchestration -> role lanes (Dev/QA/Security/Ops) -> repo pl
 - [x] Validator, secret scan, shell syntax, diff check, and isolated install pass.
 - [x] sshpick remains outside the target tree and unchanged.
 - [x] Plan, state, ledger, and role evidence reconcile.
-- [ ] Local commit and remote branch parity are verified if publication is authorized.
+- [x] Local commit and remote branch parity are verified if publication is authorized.
 - [x] No claim is made for runtime activation because no Hermes gateway was modified.

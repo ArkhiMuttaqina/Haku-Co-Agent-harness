@@ -1,7 +1,7 @@
 {
   "plan_id": "HAKU-261008-harness-bootstrap",
-  "status": "blocked_publication_approval",
-  "phase": "local_commit_complete",
+  "status": "completed",
+  "phase": "published_and_verified",
   "execution_approved": true,
   "current_task": null,
   "owners": {
@@ -11,10 +11,11 @@
     "security": ["haku"],
     "ops": []
   },
-  "next_action": "Authenticate GitHub remote, then push main and verify remote parity",
+  "next_action": "No action; bootstrap complete",
   "last_verified": "2026-10-08",
-  "local_commit": "b355a31",
-  "candidate_commit": "b355a31",
-  "remote_parity": false,
+  "local_commit": "d509dd8",
+  "candidate_commit": "d509dd8",
+  "remote_parity": true,
+  "remote_ref": "refs/heads/main",
   "runtime_active": false
 }
