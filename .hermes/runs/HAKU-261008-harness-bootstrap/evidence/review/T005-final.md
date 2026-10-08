@@ -2,7 +2,8 @@
 
 Local candidate: VERIFIED locally, publication BLOCKED
 
-- Local commit: `0932f738117e1f41455b8815bedbac77b252d944`
+- Local commit: `b355a31` (candidate content and local verification state)
+- Final reconciliation commit: created after this evidence update; verify with `git log -1`
 - Branch: `main`
 - Worktree: clean after commit
 - Remote: `origin` configured for `ArkhiMuttaqina/Haku-Co-Agent-harness`
