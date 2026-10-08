@@ -1,0 +1,16 @@
+{
+  "plan_id": "<PLAN_ID>",
+  "status": "planned",
+  "phase": "planning_complete",
+  "execution_approved": false,
+  "current_task": null,
+  "owners": {
+    "orchestrator": "haku",
+    "dev": [],
+    "qa": [],
+    "security": [],
+    "ops": []
+  },
+  "next_action": "Await explicit execution approval",
+  "last_verified": null
+}

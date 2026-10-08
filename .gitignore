@@ -1,0 +1,33 @@
+# Secrets and local runtime state
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+*.p12
+*.pfx
+*.crt
+
+# Hermes/Mnemosyne runtime state
+state.db
+*.db
+sessions/
+logs/
+cache/
+mnemosyne/
+
+# Python
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.venv/
+venv/
+
+# OS/editor
+.DS_Store
+.idea/
+.vscode/
+
+# Local evidence that may contain sensitive data
+*.log
+artifacts/private/

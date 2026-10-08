@@ -1,0 +1,15 @@
+# Memory seed template — placeholders only, no personal data
+shared_workflow:
+  orchestration_owner: haku
+  language_style: concise-direct-root-cause-first
+  evidence_lanes:
+    - dev
+    - qa
+    - security
+    - ops
+  plan_contract: one-stable-plan-id-per-business-outcome
+  memory_boundary: durable-rules-only
+telegram:
+  default_role: orchestrator
+  worker_mode: mention-or-reply-only
+  reactions: [observed, listening, processing, completed]

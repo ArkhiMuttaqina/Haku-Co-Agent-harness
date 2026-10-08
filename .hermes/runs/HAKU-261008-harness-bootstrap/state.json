@@ -1,0 +1,16 @@
+{
+  "plan_id": "HAKU-261008-harness-bootstrap",
+  "status": "in_progress",
+  "phase": "implementation_and_verification",
+  "execution_approved": true,
+  "current_task": "T003",
+  "owners": {
+    "orchestrator": "haku",
+    "dev": ["haku"],
+    "qa": ["haku"],
+    "security": ["haku"],
+    "ops": []
+  },
+  "next_action": "Reconcile evidence, commit, and verify remote parity",
+  "last_verified": "2026-10-08"
+}

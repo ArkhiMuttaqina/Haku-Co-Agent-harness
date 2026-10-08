@@ -1,0 +1,7 @@
+{"event":"plan_created","plan_id":"HAKU-261008-harness-bootstrap","actor":"haku","status":"planned","note":"Sanitized harness bootstrap scope established."}
+{"event":"execution_approved","plan_id":"HAKU-261008-harness-bootstrap","actor":"haku","status":"in_progress","note":"User requested implementation and README."}
+{"event":"T001_bootstrap_verified","plan_id":"HAKU-261008-harness-bootstrap","actor":"haku","status":"verified","note":"Empty remote cloned to /home/arkhi25/repo/Haku-Co-Agent-harness; sshpick kept as sibling."}
+{"event":"T002_package_written","plan_id":"HAKU-261008-harness-bootstrap","actor":"haku","status":"changed","note":"Sanitized docs, profiles, skills, templates, and scripts created."}
+{"event":"T003_validation_verified","plan_id":"HAKU-261008-harness-bootstrap","actor":"haku","status":"verified","note":"Validation, secret scan, shell syntax, tracked/untracked whitespace, clean isolated install, partial-install preflight, protected-target refusal, and JSON/JSONL checks passed."}
+{"event":"T004_security_verified","plan_id":"HAKU-261008-harness-bootstrap","actor":"haku","status":"verified","note":"Sanitized source boundary reviewed; no raw private runtime state or credentials included; live runtime security remains out of scope."}
+{"event":"T005_local_candidate_ready","plan_id":"HAKU-261008-harness-bootstrap","actor":"haku","status":"verified","note":"Local candidate is ready for commit; remote publication remains a separate authorization boundary."}
