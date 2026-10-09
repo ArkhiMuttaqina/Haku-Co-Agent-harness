@@ -1,0 +1,27 @@
+# Sanitized Mnemosyne memory configuration
+#
+# Merge the `memory:` mapping into a Hermes profile config. This is a safe
+# workflow baseline only; it does not contain a database path, credentials,
+# user records, session history, or private memory contents.
+
+memory:
+  provider: mnemosyne
+  write_approval: false
+  default_scope: global
+  mnemosyne:
+    auto_sleep: true
+    sleep_threshold: 50
+    profile_isolation: false
+    sync_roles:
+      - user
+    shared_surface_read: false
+    reflect:
+      disabled_for_cron: true
+      max_calls_per_session: 3
+
+# Runtime requirements:
+# - Install/enable the Mnemosyne plugin in the target Hermes profile.
+# - Keep the actual Mnemosyne database outside Git and outside this repository.
+# - Use canonical memory for stable identity/preferences and repo-local runs for
+#   ephemeral task state, logs, hashes, and evidence.
+# - Verify the target profile's live config and plugin state after installation.

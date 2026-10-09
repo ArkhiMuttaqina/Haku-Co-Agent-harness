@@ -1,0 +1,15 @@
+# HAKU/default role overlay
+# Merge this after templates/hermes/config.common.yaml.
+
+progress_tail:
+  renderer:
+    agent_label: Hermes
+
+telegram:
+  # HAKU may answer ordinary war-room traffic unless another bot is explicitly
+  # targeted; exclusive_bot_mentions prevents hijacking another bot's call.
+  require_mention: false
+  exclusive_bot_mentions: true
+  observe_unmentioned_group_messages: true
+  reactions: true
+  reply_to_mode: first

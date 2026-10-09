@@ -1,0 +1,14 @@
+# Shiro/dev1 role overlay
+# Merge this after templates/hermes/config.common.yaml.
+
+progress_tail:
+  renderer:
+    agent_label: Shiro
+
+telegram:
+  # Workers stay quiet unless directly mentioned/replied to.
+  require_mention: true
+  exclusive_bot_mentions: true
+  observe_unmentioned_group_messages: true
+  reactions: true
+  reply_to_mode: first

@@ -1,15 +1,62 @@
-# Memory seed template — placeholders only, no personal data
-shared_workflow:
-  orchestration_owner: haku
-  language_style: concise-direct-root-cause-first
-  evidence_lanes:
-    - dev
-    - qa
-    - security
-    - ops
-  plan_contract: one-stable-plan-id-per-business-outcome
-  memory_boundary: durable-rules-only
-telegram:
-  default_role: orchestrator
-  worker_mode: mention-or-reply-only
-  reactions: [observed, listening, processing, completed]
+# Mnemosyne durable-memory seed — placeholders and policy only
+# This is documentation/input guidance, not a database export.
+
+schema_version: 1
+provider: mnemosyne
+policy:
+  default_scope: global
+  profile_isolation: false
+  durable_only: true
+  exclude:
+    - credentials
+    - raw-session-history
+    - task-progress
+    - command-output
+    - commit-and-pr-identifiers
+    - temporary-logs
+
+canonical_slots:
+  - category: identity
+    name: orchestrator_role
+    body: HAKU owns orchestration, reconciliation, final judgment, and user-facing delivery.
+    source: harness-template
+    confidence: 1.0
+  - category: workflow
+    name: task_authority
+    body: Repo-local plans, state, ledger, and evidence are authoritative for active task progress.
+    source: harness-template
+    confidence: 1.0
+  - category: workflow
+    name: lifecycle_separation
+    body: Planned, changed, verified, committed, pushed, deployed, and runtime-active are separate states.
+    source: harness-template
+    confidence: 1.0
+
+shared_surface_examples:
+  - kind: preference
+    content: "[pref] Replace this placeholder with a concise, durable user preference."
+    importance: 0.8
+    veracity: stated
+  - kind: meta
+    content: "[workflow] HAKU owns top-level completion after direct evidence verification."
+    importance: 0.9
+    veracity: imported
+  - kind: meta
+    content: "[arch] Dev, QA, Security, and Ops are separate evidence lanes."
+    importance: 0.8
+    veracity: imported
+
+knowledge_graph_examples:
+  - subject: HAKU
+    predicate: owns
+    object: orchestration-and-final-verdict
+    confidence: 1.0
+  - subject: active-task-state
+    predicate: stored_in
+    object: repo-local-hermes-run
+    confidence: 1.0
+
+notes:
+  - Check recall/canonical state before adding a fact to avoid duplication.
+  - Supersede stale facts rather than leaving contradictory active records.
+  - Do not import this file blindly; review and customize placeholders locally.

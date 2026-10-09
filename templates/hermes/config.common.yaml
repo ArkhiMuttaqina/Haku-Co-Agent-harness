@@ -1,0 +1,179 @@
+# Haku Co-Agent Harness — portable Hermes baseline
+#
+# This file is a sanitized reference, not a drop-in copy of a private profile.
+# Keep provider credentials, model catalogs, chat IDs, and bot tokens in the
+# target profile's config/.env. Preserve the role-specific Telegram overlay.
+
+agent:
+  max_turns: 1000
+  gateway_timeout: 1800
+  gateway_notify_interval: 0
+  reasoning_effort: high
+
+terminal:
+  backend: local
+  timeout: 180
+  workdir: .
+
+# LCM is the selected context engine; the threshold/protection values below
+# are the built-in compression contract used by the HAKU baseline.
+context:
+  engine: lcm
+context_compression:
+  enabled: true
+  threshold_pct: 50
+  target_ratio: 0.2
+  protect_first_n: 3
+  protect_last_n: 20
+
+session_reset:
+  mode: none
+
+sessions:
+  auto_prune: false
+  vacuum_after_prune: false
+  write_json_snapshots: true
+
+display:
+  busy_input_mode: queue
+  busy_ack_enabled: false
+  reasoning_full: true
+  tool_progress: verbose
+  interim_assistant_messages: false
+  streaming:
+    enabled: true
+    platforms:
+      telegram:
+        streaming: true
+  platforms:
+    telegram:
+      tool_progress: true
+      show_reasoning: false
+      interim_assistant_messages: false
+
+delegation:
+  max_iterations: 300
+
+# Native Mnemosyne and LCM are configured as shared workflow capabilities.
+# The installer must verify that the target profile actually has both plugins.
+memory:
+  provider: mnemosyne
+  write_approval: false
+  mnemosyne:
+    auto_sleep: true
+    sleep_threshold: 50
+    profile_isolation: false
+    sync_roles:
+      - user
+    default_scope: global
+    shared_surface_read: false
+    reflect:
+      disabled_for_cron: true
+      max_calls_per_session: 3
+
+approvals:
+  mode: smart
+  timeout: 60
+
+# These are the complete common progress-tail defaults. Only agent_label is
+# role-specific (Hermes for HAKU, Shiro for the Dev worker).
+progress_tail:
+  enabled: true
+  tools:
+    enabled: true
+    lines: 5
+    preview_length: 160
+    show_completed: true
+    show_duration: true
+    timestamp: true
+    timestamp_format: '%H:%M'
+  delegates:
+    enabled: true
+    max_delegates: 6
+    lines_per_delegate: 3
+    max_goal_chars: 64
+    max_line_chars: 120
+    show_model: true
+    show_tool_count: true
+    show_completion: true
+    completed_ttl_seconds: 20
+    thinking: summary
+  todo:
+    sticky: true
+    hide_tool_line: false
+    max_pending: 5
+    max_completed: 5
+    max_cancelled: 3
+    max_item_chars: 60
+  patch:
+    detail: smart
+    preview_chars: 48
+    max_files: 3
+  assistant:
+    enabled: true
+    max_lines: 3
+    max_chars: 500
+    min_update_chars: 160
+  reasoning:
+    enabled: true
+    max_lines: 5
+    max_chars: 900
+    min_update_chars: 180
+    no_edit_strategy: 'off'
+  background_jobs:
+    enabled: true
+    list_running: true
+    show_completed: true
+    completed_ttl_seconds: 20
+    max_jobs: 6
+    head_lines: 2
+    tail_lines: 4
+    max_line_chars: 120
+    update_interval_seconds: 10
+    suppress_native_notify: true
+    suppress_watch_notifications: true
+  native_gateway:
+    suppress: true
+  cleanup:
+    auto_delete: false
+    delay_seconds: 5
+    delete_on_success: true
+    delete_on_failure: false
+    delete_background_active: false
+  footer:
+    enabled: true
+    density: normal
+    max_path_chars: 56
+  telegram:
+    rich_messages: true
+    verification_table: true
+    thinking_blocks: true
+    max_table_rows: 10
+    compact_success: false
+    max_detail_items: 12
+  renderer:
+    strategy: live_tail
+    edit_interval: 5
+    message_rollover_minutes: 5
+    stale_ttl_seconds: 900
+    redact_secrets: true
+    mode: focused
+    style: emoji
+    density: verbose
+    # Set per role: Hermes (HAKU) or Shiro (Dev).
+    agent_label: Hermes
+  no_edit:
+    interval_seconds: 30
+    min_new_events: 3
+    final_summary: true
+    max_snapshots_per_turn: 5
+
+plugins:
+  enabled:
+    - hermes-lcm
+    - hermes-progress-tail
+    - mnemosyne
+  disabled: []
+  entries:
+    hermes-lcm:
+      allow_tool_override: false

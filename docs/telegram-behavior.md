@@ -36,6 +36,15 @@ Session titles and Telegram topic names are separate state. A topic rename requi
 
 Prefer queue mode and disable busy acknowledgements when the user wants a quiet war room. Tool-progress rendering, native Telegram interim output, reasoning display, and plugin suppression are separate settings; report stored versus effective behavior.
 
+The portable Hermes baseline in `../templates/hermes/config.common.yaml`
+defines the shared progress-tail surface: live-tail strategy, five-second
+edits, bounded tool/delegate/reasoning/background sections, rich Telegram
+tables, native-notify suppression, and sticky todo summaries. Role overlays
+change only identity and admission semantics: HAKU is free-response while
+Shiro/dev workers remain mention/reply gated. Do not copy a private
+`config.yaml` wholesale; preserve each profile's model, provider catalog,
+credentials, chat allowlists, and role identity.
+
 ## Verification
 
 A live claim requires adapter logs or a bounded Telegram smoke proving the exact target, topic, reply anchoring, reaction, and answer-authority behavior. Config presence alone is not runtime proof.

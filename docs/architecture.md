@@ -23,6 +23,7 @@ Runtime adapters: Hermes, Telegram, model providers, memory backend
 | Concern | Authority |
 |---|---|
 | Identity and role | profile `SOUL.md` / runtime profile |
+| Compact profile-local durable-memory guidance | profile `MEMORY.md` |
 | Repo behavior | `AGENTS.md` and scoped project instructions |
 | Reusable procedure | `skills/` |
 | Current task plan | `.hermes/plans/<PLAN_ID>.md` |

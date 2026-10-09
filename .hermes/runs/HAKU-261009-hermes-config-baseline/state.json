@@ -1,0 +1,27 @@
+{
+  "plan_id": "HAKU-261009-hermes-config-baseline",
+  "status": "completed",
+  "phase": "local_verified_restart_pending",
+  "execution_approved": true,
+  "current_task": null,
+  "owners": {
+    "orchestrator": "haku",
+    "dev": [
+      "haku"
+    ],
+    "qa": [
+      "haku"
+    ],
+    "security": [
+      "haku"
+    ],
+    "ops": [
+      "haku"
+    ]
+  },
+  "next_action": "No action; runtime restart is separately user-controlled",
+  "runtime_active": false,
+  "publication": "not_requested",
+  "gateway_restart": "not_performed",
+  "last_verified": "2026-10-09"
+}

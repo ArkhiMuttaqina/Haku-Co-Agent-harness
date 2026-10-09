@@ -42,10 +42,15 @@ docs/
 
 profiles/
 ├── haku/SOUL.md               # orchestrator identity template
+├── haku/MEMORY.md             # sanitized durable-memory baseline
 ├── dev/SOUL.md                # implementation worker template
+├── dev/MEMORY.md              # development-lane memory baseline
 ├── qa/SOUL.md                 # verification worker template
+├── qa/MEMORY.md               # QA-lane memory baseline
 ├── security/SOUL.md           # security reviewer template
-└── ops/SOUL.md                # runtime/deployment evidence template
+├── security/MEMORY.md         # security-lane memory baseline
+├── ops/SOUL.md                # runtime/deployment evidence template
+└── ops/MEMORY.md              # operations-lane memory baseline
 
 skills/
   haku-coagent-core/          # core execution and evidence contract
@@ -58,6 +63,11 @@ templates/
   state.json                  # compact resume-state template
   ledger.jsonl                # append-only ledger example
   evidence/                   # role evidence directory template
+  hermes/
+    config.common.yaml        # sanitized shared Hermes/HAKU baseline
+    config.haku.yaml          # HAKU Telegram role overlay
+    config.dev1.yaml          # Shiro/dev1 Telegram role overlay
+    memory.mnemosyne.yaml     # recommended sanitized Mnemosyne config
 
 scripts/
   validate.py                 # structure/frontmatter/reference validation
@@ -106,9 +116,34 @@ Both checks are dependency-light and should run with Python 3.10+.
 
 ## Memory model
 
-The harness ships a **memory policy and examples**, not private memory. Durable facts may be stored in a configured shared memory provider; transient task state belongs in the repo-local plan/run; credentials and session transcripts stay outside Git.
+The harness ships a **memory policy, Mnemosyne configuration, role-local
+`MEMORY.md` baselines, and sanitized seed examples**—not private memory. Durable
+facts may be stored in a configured shared memory provider; transient task state
+belongs in the repo-local plan/run; credentials, raw databases, and session
+transcripts stay outside Git.
 
 See [`docs/memory-policy.md`](docs/memory-policy.md).
+
+## Hermes baseline templates
+
+The `templates/hermes/` files capture the recommended parity surface without
+copying a private profile. The common baseline includes queue-mode busy input,
+`agent.max_turns: 1000`, `agent.reasoning_effort: high`, `delegation.max_iterations: 300`,
+LCM/compression settings, shared Mnemosyne settings, Telegram streaming/tool
+progress, and the full `hermes-progress-tail` renderer/tool/delegate/background
+configuration. The HAKU and Shiro overlays intentionally keep role differences:
+
+- `templates/hermes/memory.mnemosyne.yaml`: sanitized recommended Mnemosyne
+  configuration for global durable memory with profile isolation disabled.
+- `profiles/*/SOUL.md`: portable role identity and operating-boundary templates.
+- `profiles/*/MEMORY.md`: role-local durable-memory policy/baseline files.
+- HAKU: `require_mention: false`, progress label `Hermes`.
+- Shiro/dev1: `require_mention: true`, progress label `Shiro`.
+
+These are sanitized reference templates, not a request to overwrite a live
+profile wholesale. Provider/model catalogs, chat IDs, credentials, and tokens
+remain profile-owned. Plugin enablement must be verified separately because a
+YAML entry alone does not prove the plugin is installed or runtime-active.
 
 ## Telegram model
 

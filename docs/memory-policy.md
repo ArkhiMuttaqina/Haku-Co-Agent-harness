@@ -33,9 +33,18 @@ Session transcripts, raw Mnemosyne databases, credentials, provider tokens, cook
 - Do not store temporary progress, commit IDs, issue IDs, PR numbers, or incident logs as durable facts.
 - When a durable rule changes, supersede the old rule rather than leaving contradictions.
 
-## Example seed
+## Example seeds and profile baselines
 
-See [`../templates/memory.seed.yaml`](../templates/memory.seed.yaml). It contains placeholders only and is safe to customize locally.
+- [`../templates/memory.seed.yaml`](../templates/memory.seed.yaml) contains a
+  provider-neutral durable-memory seed.
+- [`../templates/hermes/memory.mnemosyne.yaml`](../templates/hermes/memory.mnemosyne.yaml)
+  contains the sanitized recommended Mnemosyne profile configuration.
+- `profiles/*/MEMORY.md` contains role-local durable-memory guidance. These are
+  sanitized baselines, not private memory exports.
+- `profiles/*/SOUL.md` contains role identity and operating-boundary templates.
+
+All actual databases, canonical user facts, profile identity details, and
+private records remain in the configured local runtime/provider.
 
 ## Sharing across agents
 

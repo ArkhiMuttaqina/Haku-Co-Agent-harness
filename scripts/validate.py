@@ -13,11 +13,16 @@ REQUIRED = [
     ".hermes/README.md", ".env.example",
     "docs/architecture.md", "docs/operating-model.md", "docs/memory-policy.md",
     "docs/telegram-behavior.md",
-    "profiles/haku/SOUL.md", "profiles/dev/SOUL.md", "profiles/qa/SOUL.md",
-    "profiles/security/SOUL.md", "profiles/ops/SOUL.md",
+    "profiles/haku/SOUL.md", "profiles/haku/MEMORY.md",
+    "profiles/dev/SOUL.md", "profiles/dev/MEMORY.md",
+    "profiles/qa/SOUL.md", "profiles/qa/MEMORY.md",
+    "profiles/security/SOUL.md", "profiles/security/MEMORY.md",
+    "profiles/ops/SOUL.md", "profiles/ops/MEMORY.md",
     "templates/plan.md", "templates/state.json", "templates/ledger.jsonl",
     "templates/memory.seed.yaml", "templates/evidence/README.md",
     "templates/evidence/ROLE-evidence.md",
+    "templates/hermes/config.common.yaml", "templates/hermes/config.haku.yaml",
+    "templates/hermes/config.dev1.yaml", "templates/hermes/memory.mnemosyne.yaml",
     "scripts/validate.py", "scripts/secret_scan.py", "scripts/install-skills.sh",
 ]
 
