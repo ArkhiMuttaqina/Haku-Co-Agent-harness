@@ -54,6 +54,7 @@ profiles/
 
 skills/
   haku-coagent-core/          # core execution and evidence contract
+  haku-coagent-erp-ui-ux/     # ERP/UI/UX workflow and rendered-product verification
   telegram-war-room/          # Telegram behavior contract
   qa-review/                  # QA lane contract
   security-review/            # security lane contract
@@ -78,6 +79,31 @@ scripts/
   plans/                      # repo-local plans for this repository
   runs/                       # execution state and evidence for this repository
 ```
+
+## ERP/UI/UX engineering lane
+
+The harness includes `skills/haku-coagent-erp-ui-ux/SKILL.md` for ERP,
+finance, inventory, CRM, HRIS, school-management, and other operational
+interfaces. It is workflow-first: inspect the existing stack and business
+rules, choose components by user intent, preserve domain safety, and verify
+the rendered product rather than stopping at a static mockup.
+
+For shadcn/ui projects, pair it with the official Hermes-installed `shadcn`
+skill. Optional companion skills currently used by the default profile are
+Vercel's `web-design-guidelines` and Anthropic's `frontend-design`. These are
+advisory skills; they do not replace backend authorization, domain validation,
+or real browser verification.
+
+See [`docs/erp-ui-ux.md`](docs/erp-ui-ux.md) for the curated installation
+matrix, source boundaries, and verification status.
+
+Upstream references:
+
+- [shadcn/ui Skills](https://ui.shadcn.com/docs/skills)
+- [Vercel Web Interface Guidelines](https://vercel.com/design/guidelines)
+- [Vercel Agent Skills](https://github.com/vercel-labs/agent-skills)
+- [Anthropic Frontend Design](https://github.com/anthropics/claude-code/tree/main/plugins/frontend-design)
+- [Playwright CLI skills](https://playwright.dev/agent-cli/skills)
 
 ## Quick start
 

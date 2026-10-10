@@ -7,7 +7,7 @@ license: MIT
 metadata:
   hermes:
     tags: [haku, orchestration, qa, security, evidence]
-    related_skills: [telegram-war-room, qa-review, security-review]
+    related_skills: [telegram-war-room, qa-review, security-review, haku-coagent-erp-ui-ux]
 ---
 
 # HAKU Co-Agent Core
@@ -28,6 +28,11 @@ metadata:
 4. Route only cleanly bounded lanes to workers.
 5. Freeze candidate identity before independent review.
 6. Re-read live plan/state/ledger/evidence before final judgment.
+
+For UI-heavy work, load `haku-coagent-erp-ui-ux` alongside this core contract.
+The UI skill adds business-workflow modeling, component selection, accessibility,
+responsive behavior, and rendered-browser verification; it does not change HAKU's
+ownership, evidence, or publication boundaries.
 
 ## Handoff minimum
 

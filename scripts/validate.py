@@ -12,7 +12,7 @@ REQUIRED = [
     "README.md", "AGENTS.md", "CONTRIBUTING.md", "SECURITY.md", "LICENSE",
     ".hermes/README.md", ".env.example",
     "docs/architecture.md", "docs/operating-model.md", "docs/memory-policy.md",
-    "docs/telegram-behavior.md",
+    "docs/telegram-behavior.md", "docs/erp-ui-ux.md",
     "profiles/haku/SOUL.md", "profiles/haku/MEMORY.md",
     "profiles/dev/SOUL.md", "profiles/dev/MEMORY.md",
     "profiles/qa/SOUL.md", "profiles/qa/MEMORY.md",
@@ -24,6 +24,7 @@ REQUIRED = [
     "templates/hermes/config.common.yaml", "templates/hermes/config.haku.yaml",
     "templates/hermes/config.dev1.yaml", "templates/hermes/memory.mnemosyne.yaml",
     "scripts/validate.py", "scripts/secret_scan.py", "scripts/install-skills.sh",
+    "skills/haku-coagent-erp-ui-ux/SKILL.md",
 ]
 
 
