@@ -3,5 +3,5 @@
 {"plan_id":"HAKU-261010-erp-ui-ux-alignment","event":"repo_alignment_completed","task_id":"T003/T004","owner":"haku","status":"verified","note":"ERP skill, docs, README, core related skills, and validator aligned in local harness.","timestamp":"2026-10-10T14:33:35Z"}
 {"plan_id":"HAKU-261010-erp-ui-ux-alignment","event":"verification_completed","task_id":"T005","owner":"haku","status":"verified","note":"Validator, secret scan, diff check, Hermes discovery, and custom skill parity passed.","timestamp":"2026-10-10T14:33:35Z"}
 {"plan_id":"HAKU-261010-erp-ui-ux-alignment","event":"final_reconciliation","task_id":"T006","owner":"haku","status":"completed","note":"Local-only completion; no commit, push, publication, or deployment authorized.","timestamp":"2026-10-10T14:33:35Z"}
-
 {"plan_id":"HAKU-261010-erp-ui-ux-alignment","event":"publication_authorized","task_id":"T006","owner":"haku","status":"in_progress","note":"Arkhi explicitly authorized local commit and push to origin/main. No release/tag/deploy scope added.","timestamp":"2026-10-10T14:57:34Z"}
+{"plan_id":"HAKU-261010-erp-ui-ux-alignment","event":"publication_verified","task_id":"T006","owner":"haku","status":"completed","note":"Commit 32ea312d431f0516240dfcf8993fdd40f3a605dc pushed to origin/main; remote ref readback matches local HEAD.","timestamp":"2026-10-10T14:59:32Z"}

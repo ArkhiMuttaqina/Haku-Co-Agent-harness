@@ -1,14 +1,14 @@
 {
   "plan_id": "HAKU-261010-erp-ui-ux-alignment",
   "status": "completed",
-  "phase": "verified_local_alignment",
+  "phase": "published_main_verified",
   "execution_approved": true,
   "ownership": "haku_direct",
   "shiro_tasks": [],
   "current_task": null,
-  "next_action": "Commit and push exact verified candidate to origin/main",
-  "publication": "authorized_local_commit_push",
-  "updated_at": "2026-10-10T14:57:34Z",
+  "next_action": "No further action",
+  "publication": "pushed_origin_main",
+  "updated_at": "2026-10-10T14:59:32Z",
   "verified": {
     "default_profile_skills": [
       "shadcn",
